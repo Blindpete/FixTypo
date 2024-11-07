@@ -2,6 +2,11 @@
 
 A simple command-line chat application powered by Google's Gemini AI model (Gemini 1.5 Flash 8B) to help improve text by focusing on grammar and clarity directly through your terminal.
 
+
+## To-Do
+- Add: Multi-line text support
+- Add: Copy to the clipboard
+
 ## Prerequisites
 
 - Go 1.21 or higher
