@@ -1,4 +1,4 @@
-module FixTypo
+module github.com/Blindpete/FixTypo
 
 go 1.23.2
 
