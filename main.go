@@ -30,7 +30,8 @@ func main() {
 	defer client.Close()
 	// Text correction prompt
 	// var textCorrectionPrompt string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. Ensure the output is clear, concise, and adheres to the established style guide.`
-	var textCorrectionPromptPreserveEmoji string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. Retain all original emojis in their positions. Ensure the final text is clear, concise, and adheres to the established style guide.`
+	// var textCorrectionPromptPreserveEmoji string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. Retain all original emojis in their positions. Ensure the final text is clear, concise, and adheres to the established style guide.`
+	var textCorrectionPromptModernSemicolons string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. For a modern casual style, replace semicolons with alternatives where appropriate for clarity and flow. Retain all original emojis in their positions. Ensure the final text is clear, concise, and adheres to the established style guide.`
 
 	// 	// Style Guide
 	// 	var correctionStyleGuide string = `* Apply British English spelling, grammar, and punctuation.
@@ -48,7 +49,7 @@ func main() {
 	model.SystemInstruction = &genai.Content{
 		// Parts: []genai.Part{genai.Text("Please provide a text that needs to be fixed. Ensure proper grammar, punctuation, and clarity.")},
 		// Parts: []genai.Part{genai.Text(textCorrectionPrompt + "\n" + correctionStyleGuide)},
-		Parts: []genai.Part{genai.Text(textCorrectionPromptPreserveEmoji)},
+		Parts: []genai.Part{genai.Text(textCorrectionPromptModernSemicolons)},
 	}
 
 	// Start chat session

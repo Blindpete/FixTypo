@@ -17,7 +17,7 @@ A simple command-line chat application powered by Google's Gemini AI model (Gemi
 You can install the application directly using Go:
 
 ```bash
-go install github.com/Blindpete/FixTypo@v0.1.0
+go install github.com/Blindpete/FixTypo@v0.2.1
 ```
 
 Or clone and build manually:
