@@ -28,6 +28,15 @@ func main() {
 		log.Fatalf("Error creating client: %v", err)
 	}
 	defer client.Close()
+	// Text correction prompt
+	// var textCorrectionPrompt string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. Ensure the output is clear, concise, and adheres to the established style guide.`
+	var textCorrectionPromptPreserveEmoji string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. Retain all original emojis in their positions. Ensure the final text is clear, concise, and adheres to the established style guide.`
+
+	// 	// Style Guide
+	// 	var correctionStyleGuide string = `* Apply British English spelling, grammar, and punctuation.
+	// * Ensure the text is clear and concise.
+	// * Use active voice where it improves clarity and is grammatically appropriate.
+	// * Prioritise accuracy and natural phrasing according to British English conventions.`
 
 	// Configure the model
 	model := client.GenerativeModel("gemini-1.5-flash-8b")
@@ -37,7 +46,9 @@ func main() {
 	model.SetMaxOutputTokens(8192)
 	model.ResponseMIMEType = "text/plain"
 	model.SystemInstruction = &genai.Content{
-		Parts: []genai.Part{genai.Text("Please provide a text that needs to be fixed. Ensure proper grammar, punctuation, and clarity.")},
+		// Parts: []genai.Part{genai.Text("Please provide a text that needs to be fixed. Ensure proper grammar, punctuation, and clarity.")},
+		// Parts: []genai.Part{genai.Text(textCorrectionPrompt + "\n" + correctionStyleGuide)},
+		Parts: []genai.Part{genai.Text(textCorrectionPromptPreserveEmoji)},
 	}
 
 	// Start chat session
