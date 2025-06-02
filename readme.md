@@ -69,7 +69,7 @@ Or if built manually:
 
 The application uses the following default settings for the Gemini model:
 
-- Model: `gemini-1.5-flash-8b`
+- Model: `gemini-2.0-flash-lite`
 - Temperature: 1.0
 - Top-K: 40
 - Top-P: 0.95

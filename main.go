@@ -40,7 +40,7 @@ func main() {
 	// * Prioritise accuracy and natural phrasing according to British English conventions.`
 
 	// Configure the model
-	model := client.GenerativeModel("gemini-1.5-flash-8b")
+	model := client.GenerativeModel("gemini-2.0-flash-lite")
 	model.SetTemperature(1)
 	model.SetTopK(40)
 	model.SetTopP(0.95)
