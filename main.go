@@ -31,8 +31,8 @@ func main() {
 	// Text correction prompt
 	// var textCorrectionPrompt string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. Ensure the output is clear, concise, and adheres to the established style guide.`
 	// var textCorrectionPromptPreserveEmoji string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. Retain all original emojis in their positions. Ensure the final text is clear, concise, and adheres to the established style guide.`
-	var textCorrectionPromptModernSemicolons string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. For a modern casual style, replace semicolons with alternatives where appropriate for clarity and flow. Retain all original emojis in their positions. Ensure the final text is clear, concise, and adheres to the established style guide.`
-
+	// var textCorrectionPromptModernSemicolons string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. For a modern casual style, replace semicolons with alternatives where appropriate for clarity and flow. Retain all original emojis in their positions. Ensure the final text is clear, concise, and adheres to the established style guide.`
+	var textCorrectionPromptModernSemicolons string = `Input text for correction. Apply British English conventions for grammar, spelling, and punctuation. For a modern casual style, replace semicolons with alternatives where appropriate for clarity and flow. Add appropriate emojis where they naturally enhance the message. Ensure the final text is clear, concise, and adheres to the established style guide.`
 	// 	// Style Guide
 	// 	var correctionStyleGuide string = `* Apply British English spelling, grammar, and punctuation.
 	// * Ensure the text is clear and concise.
@@ -40,8 +40,8 @@ func main() {
 	// * Prioritise accuracy and natural phrasing according to British English conventions.`
 
 	// Configure the model
-	model := client.GenerativeModel("gemini-2.0-flash-lite")
-	model.SetTemperature(1)
+	model := client.GenerativeModel("gemini-2.5-flash-lite-preview-06-17")
+	model.SetTemperature(0.7)
 	model.SetTopK(40)
 	model.SetTopP(0.95)
 	model.SetMaxOutputTokens(8192)
